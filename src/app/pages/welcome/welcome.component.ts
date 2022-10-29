@@ -27,34 +27,59 @@ export class WelcomeComponent implements OnInit {
     this.barActions = [
       {
         title: 'New Application',
-        icon: 'krdr-icon-magic-wand'
+        icon: 'ti ti-wand'
       },
       {
         title: 'Import Applications',
-        icon: 'krdr-icon-download10'
+        icon: 'ti ti-packge-import'
       }
     ];
     this.sideActions = [
       {
         title: 'Applications',
-        selected: true
+        selected: true,
+        subActions: [
+          {
+            selected: true,
+            title: 'Market Place Application',
+            subTitle: 'market place is a lead generation platform',
+            url: '/app/123456790/workflows',
+            icon: 'ti ti-stack-2'
+          }
+        ]
       },
       {
         title: 'Settings',
+        subActions: [
+          {
+            title: 'Manage Account',
+            subTitle: 'here you can manage your account',
+            icon: 'ti ti-user-circle'
+          },
+          {
+            title: 'Manage Subscriptions',
+            subTitle: 'here you can manage your account',
+            icon: 'ti ti-abacus'
+          }
+        ]
       },
       {
         title: 'Help',
+        subActions: [
+          {
+            title: 'FAQ',
+            subTitle: 'here you can find previously answered questions',
+            icon: 'ti ti-help'
+          },
+          {
+            title: 'Knowledge base - wiki',
+            subTitle: 'here you can find all the documentations',
+            icon: 'ti ti-notebook'
+          }
+        ]
       }
     ];
-    this.mainActions = [
-      {
-        selected: true,
-        title: 'Market Place Application',
-        subTitle: 'market place is a lead generation platform',
-        url: '/app/123456790/workflows',
-        icon: 'krdr-icon-stack2'
-      }
-    ];
+    this.mainActions = [];
   }
 
 }

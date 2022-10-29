@@ -1,0 +1,66 @@
+.workflow-designer-page {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--app-set-1-brdr-color-1);
+    .action-set {
+      display: flex;
+      align-items: center;
+      button {
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        i {
+          color: var(--app-set-1-txt-color);
+          font-size: 20px;
+        }
+        span {
+          color: var(--app-set-1-txt-color);
+          display: flex;
+          font-size: 13px;
+          font-weight: 500;
+          flex-grow: 1;
+          padding: 4px 10px;
+        }
+
+        &:hover {
+          background: var(--app-set-1-bg-color);
+        }
+
+        &.layout {
+          i, span {
+            color: var(--app-set-2-icon-color-1);
+          }
+        }
+        &.success {
+          i, span {
+            color: var(--app-set-2-icon-color-2);
+          }
+        }
+        &.danger {
+          i, span {
+            color: var(--app-set-2-icon-color-3);
+          }
+        }
+        &.warning {
+          i, span {
+            color: var(--app-set-1-icon-color-2);
+          }
+        }
+        &.primary {
+          i, span {
+            color: var(--app-set-1-logo-color-1);
+          }
+        }
+      }
+
+      &.reverse {
+      }
+    }
+  }
+}

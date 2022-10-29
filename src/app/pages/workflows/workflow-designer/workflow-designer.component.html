@@ -1,3 +1,58 @@
-<div class="workflow-list-page landing-page" [class.landing-page]="waiting">
+<div class="workflow-designer-page landing-page" [class.landing-page]="waiting">
   <app-waiting *ngIf="waiting"></app-waiting>
+  <ng-container *ngIf="!waiting">
+    <div class="header">
+      <div class="action-set">
+        <button class="layout">
+            <i class="ti ti-layout-sidebar"></i>
+        </button>
+        <button class="layout">
+          <i class="ti ti-layout-sidebar-right"></i>
+        </button>
+        <button>
+          <span>Market Place Project</span>
+          <i class="ti ti-arrows-split-2"></i>
+          <span>On new message recieved</span>
+        </button>
+      </div>
+      <div class="action-set reverse">
+        <button class="primary">
+          <i class="ti ti-layout-grid-add"></i>
+        </button>
+        <button class="success">
+          <i class="ti ti-device-floppy"></i>
+        </button>
+        <button class="warning">
+          <i class="ti ti-affiliate"></i>
+        </button>
+        <button class="danger">
+          <i class="ti ti-refresh"></i>
+        </button>
+      </div>
+      <div class="action-set reverse">
+        <button class="success">
+          <i class="ti ti-player-play"></i>
+        </button>
+        <button class="success">
+          <i class="ti ti-bug"></i>
+        </button>
+        <button class="warning">
+          <i class="ti ti-activity"></i>
+        </button>
+        <button class="layout">
+          <i class="ti ti-terminal-2"></i>
+        </button>
+        <button>
+          <i class="ti ti-bell"></i>
+        </button>
+        <button>
+          <i class="ti ti-settings"></i>
+        </button>
+        <button>
+          <i class="ti ti-user-circle"></i>
+          <span>Navid Kianfar</span>
+        </button>
+      </div>
+    </div>
+  </ng-container>
 </div>

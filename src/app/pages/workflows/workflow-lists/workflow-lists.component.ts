@@ -27,11 +27,11 @@ export class WorkflowListsComponent implements OnInit {
     this.barActions = [
       {
         title: 'New Workflow',
-        icon: 'krdr-icon-magic-wand'
+        icon: 'ti ti-wand'
       },
       {
         title: 'Import Workflows',
-        icon: 'krdr-icon-download10'
+        icon: 'ti ti-packge-import'
       }
     ];
     this.sideActions = [
@@ -44,13 +44,13 @@ export class WorkflowListsComponent implements OnInit {
             title: 'On new message received',
             subTitle: 'Send a welcome message if user is messaging fot the first time',
             url: '/app/123456790/workflows/123456790/designer',
-            icon: 'krdr-icon-git-branch'
+            icon: 'ti ti-arrows-split-2'
           },
           {
             title: 'On consultation completed',
             subTitle: 'Send a quote to user when treatment plan is generated',
             url: '/app/123456790/workflows/123456790/designer',
-            icon: 'krdr-icon-git-branch'
+            icon: 'ti ti-arrows-split-2'
           },
         ]
       },
@@ -60,38 +60,36 @@ export class WorkflowListsComponent implements OnInit {
           {
             title: 'Template 1',
             subTitle: 'This is a description for the showing template',
-            icon: 'krdr-icon-codesandbox'
+            icon: 'ti ti-shape-2'
           },
           {
             title: 'Template 2',
             subTitle: 'This is a description for the showing template',
-            icon: 'krdr-icon-briefcase'
+            icon: 'ti ti-shape-2'
           },
           {
             title: 'Template 3',
             subTitle: 'This is a description for the showing template',
-            icon: 'krdr-icon-box'
+            icon: 'ti ti-shape-2'
           },
         ]
       },
       {
         title: 'Help',
+        subActions: [
+          {
+            title: 'What is workflow',
+            subTitle: 'This is a description for the showing template',
+            icon: 'ti ti-alert-triangle'
+          },
+          {
+            title: 'Micro services and integrations',
+            subTitle: 'How can micro services are integrated to workflow engine',
+            icon: 'ti ti-plug-connected'
+          }
+        ]
       }
     ];
-    this.mainActions = [
-      {
-        selected: true,
-        title: 'On new message received',
-        subTitle: 'Send a welcome message if user is messaging fot the first time',
-        url: '/app/123456790/workflows/123456790/designer',
-        icon: 'krdr-icon-git-branch'
-      },
-      {
-        title: 'On consultation completed',
-        subTitle: 'Send a quote to user when treatment plan is generated',
-        url: '/app/123456790/workflows/123456790/designer',
-        icon: 'krdr-icon-git-branch'
-      },
-    ];
+    this.mainActions = [];
   }
 }

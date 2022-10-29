@@ -22,6 +22,10 @@ export class LandingDialogComponent implements OnInit {
   constructor(private readonly router: Router) { }
 
   ngOnInit(): void {
+    if (this.sideActions?.length) {
+      const selected = this.sideActions.find(i => i.selected) || this.sideActions[0];
+      this.pickSide(selected);
+    }
   }
 
   pickSide(side: ActionViewModel) {
