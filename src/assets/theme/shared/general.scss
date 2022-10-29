@@ -1,0 +1,12 @@
+body {
+  background: var(--app-body-bg-color);
+  color: var(--app-body-txt-color);
+}
+
+.landing-page {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
