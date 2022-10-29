@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LandingDialogComponent } from './components/landing-dialog/landing-dialog.component';
+import {FormsModule} from '@angular/forms';
 
 
 
@@ -11,8 +12,9 @@ import { LandingDialogComponent } from './components/landing-dialog/landing-dial
     exports: [
         LandingDialogComponent
     ],
-    imports: [
-        CommonModule
-    ]
+  imports: [
+    CommonModule,
+    FormsModule
+  ]
 })
 export class CoreModule { }

@@ -1,5 +1,5 @@
 <div class="app-landing-dialog">
-  <div class="header">Welcome to Kerdar Workflow engine</div>
+  <div *ngIf="header" class="header">{{header}}</div>
   <div class="action-bar">
     <div class="sidebar">
       <div class="logo-wrapper">
@@ -10,222 +10,38 @@
         <div class="sub-title">2022.10.20</div>
       </div>
     </div>
-    <div class="content">
-      <div class="search-wrapper">
+    <div *ngIf="showActionBar" class="content">
+      <div *ngIf="showFilter" class="search-wrapper">
         <i class="krdr-icon-search"></i>
-        <input type="text" placeholder="Search applications">
+        <input type="text" [(ngModel)]="filterText" [placeholder]="searchPlaceHolder">
       </div>
       <div class="actions">
-        <button>
-          <i class="krdr-icon-magic-wand"></i>
-          <span>New Application</span>
-        </button>
-        <button>
-          <i class="krdr-icon-download10"></i>
-          <span>Import Applications</span>
+        <button *ngFor="let btn of barActions">
+          <i [class]="btn.icon"></i>
+          <span>{{btn.title}}</span>
         </button>
       </div>
     </div>
   </div>
   <div class="wrapper">
-    <div class="sidebar">
+    <div *ngIf="showSidebar" class="sidebar">
       <ul>
-        <li class="selected">Applications</li>
-        <li>Settings</li>
-        <li>Help</li>
+        <li *ngFor="let side of sideActions"
+            (click)="pickSide(side)"
+            [class.selected]="side.selected">{{side.title}}</li>
       </ul>
     </div>
     <div class="content">
 
-      <div class="item selected">
+      <div class="item"
+           *ngFor="let main of mainActions"
+           (click)="pickMain(main)">
         <div class="image-wrapper">
-          <i class="krdr-icon-stack2"></i>
+          <i [class]="main.icon"></i>
         </div>
         <div class="info-wrapper">
-          <div class="title">Lorem ipsum dolor sit amet</div>
-          <div class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-        </div>
-        <div class="action-wrapper">
-          <i class="krdr-icon-cog"></i>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="image-wrapper">
-          <i class="krdr-icon-stack2"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Lorem ipsum dolor sit amet</div>
-          <div class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-        </div>
-        <div class="action-wrapper">
-          <i class="krdr-icon-cog"></i>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="image-wrapper">
-          <i class="krdr-icon-stack2"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Lorem ipsum dolor sit amet</div>
-          <div class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-        </div>
-        <div class="action-wrapper">
-          <i class="krdr-icon-cog"></i>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="image-wrapper">
-          <i class="krdr-icon-stack2"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Lorem ipsum dolor sit amet</div>
-          <div class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-        </div>
-        <div class="action-wrapper">
-          <i class="krdr-icon-cog"></i>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="image-wrapper">
-          <i class="krdr-icon-stack2"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Lorem ipsum dolor sit amet</div>
-          <div class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-        </div>
-        <div class="action-wrapper">
-          <i class="krdr-icon-cog"></i>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="image-wrapper">
-          <i class="krdr-icon-stack2"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Lorem ipsum dolor sit amet</div>
-          <div class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-        </div>
-        <div class="action-wrapper">
-          <i class="krdr-icon-cog"></i>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="image-wrapper">
-          <i class="krdr-icon-stack2"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Lorem ipsum dolor sit amet</div>
-          <div class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-        </div>
-        <div class="action-wrapper">
-          <i class="krdr-icon-cog"></i>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="image-wrapper">
-          <i class="krdr-icon-stack2"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Lorem ipsum dolor sit amet</div>
-          <div class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-        </div>
-        <div class="action-wrapper">
-          <i class="krdr-icon-cog"></i>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="image-wrapper">
-          <i class="krdr-icon-stack2"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Lorem ipsum dolor sit amet</div>
-          <div class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-        </div>
-        <div class="action-wrapper">
-          <i class="krdr-icon-cog"></i>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="image-wrapper">
-          <i class="krdr-icon-stack2"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Lorem ipsum dolor sit amet</div>
-          <div class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-        </div>
-        <div class="action-wrapper">
-          <i class="krdr-icon-cog"></i>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="image-wrapper">
-          <i class="krdr-icon-stack2"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Lorem ipsum dolor sit amet</div>
-          <div class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-        </div>
-        <div class="action-wrapper">
-          <i class="krdr-icon-cog"></i>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="image-wrapper">
-          <i class="krdr-icon-stack2"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Lorem ipsum dolor sit amet</div>
-          <div class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-        </div>
-        <div class="action-wrapper">
-          <i class="krdr-icon-cog"></i>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="image-wrapper">
-          <i class="krdr-icon-stack2"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Lorem ipsum dolor sit amet</div>
-          <div class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-        </div>
-        <div class="action-wrapper">
-          <i class="krdr-icon-cog"></i>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="image-wrapper">
-          <i class="krdr-icon-stack2"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Lorem ipsum dolor sit amet</div>
-          <div class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-        </div>
-        <div class="action-wrapper">
-          <i class="krdr-icon-cog"></i>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="image-wrapper">
-          <i class="krdr-icon-stack2"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Lorem ipsum dolor sit amet</div>
-          <div class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+          <div class="title">{{ main.title }}</div>
+          <div class="sub-title">{{ main.subTitle }}</div>
         </div>
         <div class="action-wrapper">
           <i class="krdr-icon-cog"></i>
