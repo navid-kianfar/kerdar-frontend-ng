@@ -34,10 +34,42 @@ export class WorkflowListsComponent implements OnInit {
     this.sideActions = [
       {
         title: 'Workflows',
-        selected: true
+        selected: true,
+        subActions: [
+          {
+            selected: true,
+            title: 'On new message received',
+            subTitle: 'Send a welcome message if user is messaging fot the first time',
+            url: '/app/123456790/workflows/123456790/designer',
+            icon: 'krdr-icon-git-branch'
+          },
+          {
+            title: 'On consultation completed',
+            subTitle: 'Send a quote to user when treatment plan is generated',
+            url: '/app/123456790/workflows/123456790/designer',
+            icon: 'krdr-icon-git-branch'
+          },
+        ]
       },
       {
         title: 'Templates',
+        subActions: [
+          {
+            title: 'Template 1',
+            subTitle: 'This is a description for the showing template',
+            icon: 'krdr-icon-codesandbox'
+          },
+          {
+            title: 'Template 2',
+            subTitle: 'This is a description for the showing template',
+            icon: 'krdr-icon-briefcase'
+          },
+          {
+            title: 'Template 3',
+            subTitle: 'This is a description for the showing template',
+            icon: 'krdr-icon-box'
+          },
+        ]
       },
       {
         title: 'Help',

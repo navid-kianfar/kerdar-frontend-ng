@@ -4,4 +4,6 @@ export interface ActionViewModel {
   icon?: string;
   url?: string;
   selected?: boolean;
+
+  subActions?: ActionViewModel[];
 }

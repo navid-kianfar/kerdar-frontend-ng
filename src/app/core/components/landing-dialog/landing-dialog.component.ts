@@ -27,6 +27,9 @@ export class LandingDialogComponent implements OnInit {
   pickSide(side: ActionViewModel) {
     this.sideActions.forEach(a => a.selected = false);
     side.selected = true;
+    if (side.subActions && side.subActions.length) {
+      this.mainActions = [...side.subActions];
+    }
   }
 
   async pickMain(main: ActionViewModel) {
