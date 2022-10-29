@@ -9,12 +9,15 @@ import {ActionViewModel} from '../../../core/dtos/landing-dialog-dtos';
 export class WorkflowListsComponent implements OnInit {
   searchPlaceHolder: string = '';
   header: string = '';
+  waiting: boolean = false;
   barActions: ActionViewModel[] = [];
   sideActions: ActionViewModel[] = [];
   mainActions: ActionViewModel[] = [];
   constructor() { }
 
   ngOnInit(): void {
+    this.waiting = true;
+    setTimeout(() => this.waiting = false, 1000);
     this.setFakeData();
   }
 

@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./workflow-designer.component.scss']
 })
 export class WorkflowDesignerComponent implements OnInit {
+  waiting: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.waiting = true;
+    setTimeout(() => this.waiting = false, 1000);
+    this.setFakeData();
   }
 
+  private setFakeData() {
+
+  }
 }

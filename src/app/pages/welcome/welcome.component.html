@@ -1,5 +1,7 @@
 <div class="welcome-page landing-page">
-  <app-landing-dialog [header]="header"
+  <app-waiting *ngIf="waiting"></app-waiting>
+  <app-landing-dialog *ngIf="!waiting"
+                      [header]="header"
                       [searchPlaceHolder]="searchPlaceHolder"
                       [sideActions]="sideActions"
                       [mainActions]="mainActions"
