@@ -1,44 +1,43 @@
 html[data-theme="dark"] {
-  --app-body-bg-color: #2b2b2b;
-  --app-body-bg-color-2: #292929;
-  --app-body-txt-color: #efefef;
+  --app-primary-color: #c93165;
+  --app-success-color: #619a5c;
+  --app-danger-color: #b75b54;
+  --app-warning-color: #d68b4a;
 
-  --app-set-1-logo-color-1: #c93165;
-  --app-set-1-brdr-color-1: #7c7d7d;
-  --app-set-1-brdr-color-2: #5a5b5c;
-  --app-set-1-bg-color: #323333;
-  --app-set-1-txt-color: #a3a3a3;
+  --app-secondary-color: #244172;
+  --app-secondary-color-shade-1: #304057;
+  --app-secondary-color-shade-2: #3e7be5;
+  --app-secondary-color-shade-3: #5291bf;
 
-  --app-set-1-icon-color-1: #7a8287;
-  --app-set-1-icon-color-2: #d68b4a;
-  --app-set-1-btn-brdr-color-1: #525252;
-  --app-set-1-btn-brdr-color-2: #383838;
-  --app-set-1-btn-bg-color-1: #424242;
-  --app-set-1-btn-txt-color-1: #dfdfe0;
-  --app-set-1-btn-txt-color-2: #808080;
-  --app-set-1-btn-bg-color-2: #3e7be5;
-  --app-set-1-btn-bg-color-5: #244172;
-  --app-set-1-btn-bg-color-3: #304057;
-  --app-set-1-btn-txt-color-3: #f9fcff;
-  --app-set-1-btn-txt-color-4: #6e6e6e;
-
-  --app-set-2-icon-color-1: #5291bf;
-  --app-set-2-icon-color-2: #619a5c;
-  --app-set-2-icon-color-3: #b75b54;
+  --app-theme-color-1: #2b2b2b;
+  --app-theme-color-2: #292929;
+  --app-theme-color-3: #383838;
+  --app-theme-color-4: #323333;
+  --app-theme-color-5: #424242;
+  --app-theme-color-6: #525252;
+  --app-theme-color-7: #5a5b5c;
+  --app-theme-color-8: #6e6e6e;
+  --app-theme-color-9: #7c7d7d;
+  --app-theme-color-10: #7a8287;
+  --app-theme-color-11: #808080;
+  --app-theme-color-12: #a3a3a3;
+  --app-theme-color-13: #efefef;
+  --app-theme-color-14: #dfdfe0;
+  --app-theme-color-15: #f9fcff;
 
 
   ::-webkit-scrollbar {
     height: 5px;
     width: 5px;
-    background: var(--app-set-1-txt-color);
+    background: var(--app-theme-color-12);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--app-set-1-brdr-color-1);
-    -webkit-box-shadow: 0px 1px 2px var(--app-set-1-btn-txt-color-1);
+    background: var(--app-theme-color-9);
+    -webkit-box-shadow: 0px 1px 2px var(--app-theme-color-14);
   }
 
   ::-webkit-scrollbar-corner {
-    background: var(--app-set-1-txt-color);
+    background: var(--app-theme-color-12);
   }
 }

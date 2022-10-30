@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid var(--app-set-1-brdr-color-1);
+    border-bottom: 1px solid var(--app-theme-color-9);
     .action-set {
       display: flex;
       align-items: center;
@@ -16,11 +16,11 @@
         display: flex;
         align-items: center;
         i {
-          color: var(--app-set-1-txt-color);
+          color: var(--app-theme-color-12);
           font-size: 20px;
         }
         span {
-          color: var(--app-set-1-txt-color);
+          color: var(--app-theme-color-12);
           display: flex;
           font-size: 13px;
           font-weight: 500;
@@ -29,32 +29,32 @@
         }
 
         &:hover {
-          background: var(--app-set-1-bg-color);
+          background: var(--app-theme-color-4);
         }
 
         &.layout {
           i, span {
-            color: var(--app-set-2-icon-color-1);
+            color: var(--app-secondary-color-shade-3);
           }
         }
         &.success {
           i, span {
-            color: var(--app-set-2-icon-color-2);
+            color: var(--app-success-color);
           }
         }
         &.danger {
           i, span {
-            color: var(--app-set-2-icon-color-3);
+            color: var(--app-danger-color);
           }
         }
         &.warning {
           i, span {
-            color: var(--app-set-1-icon-color-2);
+            color: var(--app-warning-color);
           }
         }
         &.primary {
           i, span {
-            color: var(--app-set-1-logo-color-1);
+            color: var(--app-primary-color);
           }
         }
       }
@@ -64,7 +64,7 @@
     }
   }
   .tabs-header {
-    border-bottom: 1px solid var(--app-set-1-brdr-color-1);
+    border-bottom: 1px solid var(--app-theme-color-9);
     ul {
       list-style: none;
       margin: 0;
@@ -78,13 +78,13 @@
         padding: 5px;
 
         &:hover {
-          background: var(--app-set-1-bg-color);
+          background: var(--app-theme-color-4);
         }
         &.selected {
-          background: var(--app-set-1-btn-bg-color-3);
-          color: var(--app-set-1-btn-txt-color-3);
+          background: var(--app-secondary-color-shade-1);
+          color: var(--app-theme-color-15);
           i, span {
-            color: var(--app-set-1-btn-txt-color-3);
+            color: var(--app-theme-color-15);
           }
         }
         i {
