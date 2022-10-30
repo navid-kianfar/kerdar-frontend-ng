@@ -1,6 +1,25 @@
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background: var(--app-theme-color-12);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--app-theme-color-9);
+  -webkit-box-shadow: 0px 1px 2px var(--app-theme-color-14);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--app-theme-color-12);
+}
 body {
+  margin: 0;
   background: var(--app-theme-color-1);
   color: var(--app-theme-color-13);
+  font-family: 'Ubuntu', sans-serif !important;
+}
+span, input {
+  font-family: 'Ubuntu', sans-serif !important;
 }
 
 .landing-page {

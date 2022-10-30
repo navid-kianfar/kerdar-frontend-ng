@@ -37,11 +37,4 @@ $kerdar-frontend-theme: mat.define-light-theme((
 
 * {outline: none;}
 html, body { height: 100%; }
-body {
-  margin: 0;
-  font-family: 'Ubuntu', sans-serif !important;
-}
-span, input {
-  font-family: 'Ubuntu', sans-serif !important;
-}
 @import "assets/theme/theme";
