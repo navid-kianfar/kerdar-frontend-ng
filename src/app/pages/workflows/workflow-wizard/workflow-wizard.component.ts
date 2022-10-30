@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {ActionViewModel} from '../../../core/dtos/landing-dialog-dtos';
 
 @Component({
-  selector: 'app-workflow-lists',
-  templateUrl: './workflow-lists.component.html',
-  styleUrls: ['./workflow-lists.component.scss']
+  selector: 'app-workflow-wizard',
+  templateUrl: './workflow-wizard.component.html',
+  styleUrls: ['./workflow-wizard.component.scss']
 })
-export class WorkflowListsComponent implements OnInit {
+export class WorkflowWizardComponent implements OnInit {
   searchPlaceHolder: string = '';
   header: string = '';
   waiting: boolean = false;

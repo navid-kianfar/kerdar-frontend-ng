@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {PagesModule} from './pages/pages.module';
 import {WelcomeComponent} from './pages/welcome/welcome.component';
-import {WorkflowListsComponent} from './pages/workflows/workflow-lists/workflow-lists.component';
+import {WorkflowWizardComponent} from './pages/workflows/workflow-lists/workflow-wizard.component';
 import {WorkflowDesignerComponent} from './pages/workflows/workflow-designer/workflow-designer.component';
 
 const routes: Routes = [
@@ -13,9 +13,9 @@ const routes: Routes = [
     canActivate: []
   },
   {
-    path: 'app/:app_id/workflows',
+    path: 'app/:app_id/workflows/wizard',
     title: 'workflows',
-    component: WorkflowListsComponent,
+    component: WorkflowWizardComponent,
     canActivate: []
   },
   {
