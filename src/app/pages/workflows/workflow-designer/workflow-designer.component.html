@@ -16,7 +16,7 @@
         </button>
       </div>
       <div class="action-set reverse">
-        <button class="primary">
+        <button (click)="addNode()" class="primary">
           <i class="ti ti-layout-grid-add"></i>
         </button>
         <button class="success">
@@ -52,6 +52,39 @@
           <i class="ti ti-user-circle"></i>
           <span>Navid Kianfar</span>
         </button>
+      </div>
+    </div>
+    <div class="tabs-header">
+      <ul>
+        <li class="selected">
+          <i class="ti ti-drag-drop"></i>
+          <span>Designer</span>
+        </li>
+        <li>
+          <i class="ti ti-activity"></i>
+          <span>Jobs</span>
+          <i class="ti ti-x"></i>
+        </li>
+        <li>
+          <i class="ti ti-bell"></i>
+          <span>Notifications</span>
+          <i class="ti ti-x"></i>
+        </li>
+        <li>
+          <i class="ti ti-terminal-2"></i>
+          <span>Logs</span>
+          <i class="ti ti-x"></i>
+        </li>
+        <li>
+          <i class="ti ti-settings"></i>
+          <span>Settings</span>
+          <i class="ti ti-x"></i>
+        </li>
+      </ul>
+    </div>
+    <div class="tabs-content">
+      <div class="workflow-inner-container">
+
       </div>
     </div>
   </ng-container>

@@ -63,4 +63,40 @@
       }
     }
   }
+  .tabs-header {
+    border-bottom: 1px solid var(--app-set-1-brdr-color-1);
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      li {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 5px;
+
+        &:hover {
+          background: var(--app-set-1-bg-color);
+        }
+        &.selected {
+          background: var(--app-set-1-btn-bg-color-3);
+          color: var(--app-set-1-btn-txt-color-3);
+          i, span {
+            color: var(--app-set-1-btn-txt-color-3);
+          }
+        }
+        i {
+          margin-inline-end: 5px;
+          font-size: 16px;
+        }
+        span {
+          margin-inline-end: 20px;
+          font-size: 12px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
 }

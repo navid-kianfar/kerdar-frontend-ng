@@ -1,0 +1,107 @@
+.workflow-designer-node-modal {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  max-height: 80vh;
+
+
+  border: 1px solid var(--app-set-1-brdr-color-1);
+  border-radius: 10px;
+  padding: 5px;
+  background: var(--app-body-bg-color-2);
+  width: 700px;
+  min-height: 40vh;
+
+  .modal-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--app-set-1-btn-brdr-color-2);
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      li {
+        display: flex;
+        align-items: center;
+        padding: 15px 15px;
+        cursor: pointer;
+        position: relative;
+        min-width: 100px;
+        justify-content: center;
+        i {
+          margin-inline-end: 5px;
+          font-size: 14px;
+        }
+        span {
+          font-size: 13px;
+          font-weight: 600;
+        }
+        .highlight {
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          background: var(--app-set-1-btn-txt-color-1);
+          display: none;
+          bottom: -2px;
+          left: 0;
+        }
+
+        &.selected {
+          .highlight {
+            display: block;
+          }
+        }
+
+        &:hover {
+          background: var(--app-set-1-bg-color);
+        }
+      }
+    }
+  }
+  .modal-content {
+    padding: 10px 0;
+    .filter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 0;
+      input {
+        width: 670px;
+        padding: 6px;
+        background: var(--app-body-bg-color-2);
+        border: 1px solid var(--app-set-1-btn-bg-color-5);
+        color: var(--app-set-1-btn-txt-color-4);
+        font-weight: 600;
+        border-radius: 3px;
+        outline: none;
+      }
+    }
+    .items {
+      .item {
+        .image-wrapper {
+          i {
+
+          }
+        }
+        .info-wrapper {
+          .title {
+
+          }
+          .sub-title {
+
+          }
+        }
+        .module-wrapper  {
+          .name {
+
+          }
+          .version {
+
+          }
+        }
+      }
+    }
+  }
+}
