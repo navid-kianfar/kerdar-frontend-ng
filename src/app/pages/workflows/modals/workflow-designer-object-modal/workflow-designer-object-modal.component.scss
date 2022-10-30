@@ -1,4 +1,4 @@
-.workflow-designer-node-modal {
+.workflow-designer-object-modal {
   display: flex;
   flex-direction: column;
   max-width: 700px;
@@ -93,6 +93,7 @@
         .image-wrapper {
           display: flex;
           width: 50px;
+          min-width: 50px;
           align-items: center;
           justify-content: center;
           i {
@@ -102,15 +103,21 @@
         .info-wrapper {
           display: flex;
           flex-grow: 1;
-          align-items: center;
+          justify-content: center;
+          flex-direction: column;
           .title {
             font-size: 12px;
             font-weight: 500;
+          }
+          .sub-title {
+            font-size: 10px;
+            font-weight: 400;
           }
         }
         .module-wrapper  {
           display: flex;
           width: 150px;
+          min-width: 150px;
           align-items: center;
           justify-content: flex-end;
           margin-inline-end: 15px;

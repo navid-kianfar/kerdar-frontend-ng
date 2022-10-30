@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LandingDialogComponent } from './components/landing-dialog/landing-dialog.component';
+import { WizardComponent } from './components/wizard/wizard.component';
 import {FormsModule} from '@angular/forms';
 import { WaitingComponent } from './components/waiting/waiting.component';
 
@@ -8,11 +8,11 @@ import { WaitingComponent } from './components/waiting/waiting.component';
 
 @NgModule({
     declarations: [
-        LandingDialogComponent,
+        WizardComponent,
         WaitingComponent
     ],
   exports: [
-    LandingDialogComponent,
+    WizardComponent,
     WaitingComponent
   ],
   imports: [

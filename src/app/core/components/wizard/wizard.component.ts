@@ -3,11 +3,11 @@ import {ActionViewModel} from '../../dtos/landing-dialog-dtos';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-landing-dialog',
-  templateUrl: './landing-dialog.component.html',
-  styleUrls: ['./landing-dialog.component.scss']
+  selector: 'app-wizard',
+  templateUrl: './wizard.component.html',
+  styleUrls: ['./wizard.component.scss']
 })
-export class LandingDialogComponent implements OnInit {
+export class WizardComponent implements OnInit {
 
   @Input() searchPlaceHolder: string = '';
   @Input() header: string = '';

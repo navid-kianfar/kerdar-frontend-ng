@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WelcomeComponent } from './welcome/welcome.component';
 import {CoreModule} from '../core/core.module';
-import { WorkflowWizardComponent } from './workflows/workflow-lists/workflow-wizard.component';
+import { WorkflowWizardComponent } from './workflows/workflow-wizard/workflow-wizard.component';
 import { WorkflowDesignerComponent } from './workflows/workflow-designer/workflow-designer.component';
-import { WorkflowDesignerNodeModalComponent } from './workflows/modals/workflow-designer-node-modal/workflow-designer-node-modal.component';
+import { WorkflowDesignerObjectModalComponent } from './workflows/modals/workflow-designer-object-modal/workflow-designer-object-modal.component';
 import {DialogModule} from '@angular/cdk/dialog';
 
 @NgModule({
@@ -12,7 +12,7 @@ import {DialogModule} from '@angular/cdk/dialog';
     WelcomeComponent,
     WorkflowWizardComponent,
     WorkflowDesignerComponent,
-    WorkflowDesignerNodeModalComponent
+    WorkflowDesignerObjectModalComponent
   ],
   imports: [
     DialogModule,

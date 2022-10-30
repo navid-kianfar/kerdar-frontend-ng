@@ -43,7 +43,7 @@ export class WelcomeComponent implements OnInit {
             selected: true,
             title: 'Market Place Application',
             subTitle: 'market place is a lead generation platform',
-            url: '/app/123456790/workflows',
+            url: '/app/123456790/workflows/wizard',
             icon: 'ti ti-stack-2'
           }
         ]

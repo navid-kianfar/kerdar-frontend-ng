@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Dialog} from '@angular/cdk/dialog';
 import {
-  WorkflowDesignerNodeModalComponent
-} from '../modals/workflow-designer-node-modal/workflow-designer-node-modal.component';
+  WorkflowDesignerObjectModalComponent
+} from '../modals/workflow-designer-object-modal/workflow-designer-object-modal.component';
 import {WorkflowDesignerNodeModalResponse} from '../dtos/designer-dtos';
 
 @Component({
@@ -27,7 +27,7 @@ export class WorkflowDesignerComponent implements OnInit {
 
   addNode() {
     const dialogRef = this.dialog
-      .open<WorkflowDesignerNodeModalResponse>(WorkflowDesignerNodeModalComponent, {
+      .open<WorkflowDesignerNodeModalResponse>(WorkflowDesignerObjectModalComponent, {
         data: {
 
         },

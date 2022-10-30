@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {PagesModule} from './pages/pages.module';
 import {WelcomeComponent} from './pages/welcome/welcome.component';
-import {WorkflowWizardComponent} from './pages/workflows/workflow-lists/workflow-wizard.component';
+import {WorkflowWizardComponent} from './pages/workflows/workflow-wizard/workflow-wizard.component';
 import {WorkflowDesignerComponent} from './pages/workflows/workflow-designer/workflow-designer.component';
 
 const routes: Routes = [

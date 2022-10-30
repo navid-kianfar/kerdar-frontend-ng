@@ -3,11 +3,11 @@ import {DIALOG_DATA, DialogRef} from '@angular/cdk/dialog';
 import {WorkflowDesignerNodeModalRequest, WorkflowDesignerNodeModalResponse} from '../../dtos/designer-dtos';
 
 @Component({
-  selector: 'app-workflow-designer-node-modal',
-  templateUrl: './workflow-designer-node-modal.component.html',
-  styleUrls: ['./workflow-designer-node-modal.component.scss']
+  selector: 'app-workflow-designer-object-modal',
+  templateUrl: './workflow-designer-object-modal.component.html',
+  styleUrls: ['./workflow-designer-object-modal.component.scss']
 })
-export class WorkflowDesignerNodeModalComponent implements OnInit {
+export class WorkflowDesignerObjectModalComponent implements OnInit {
 
   constructor(
     public dialogRef: DialogRef<WorkflowDesignerNodeModalResponse>,

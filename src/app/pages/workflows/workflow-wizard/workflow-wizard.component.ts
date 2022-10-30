@@ -22,7 +22,7 @@ export class WorkflowWizardComponent implements OnInit {
   }
 
   private setFakeData() {
-    this.header = 'Choose or create a workflow to continue with';
+    this.header = 'Create a workflow or continue with an existing one';
     this.searchPlaceHolder = 'Search workflows';
     this.barActions = [
       {

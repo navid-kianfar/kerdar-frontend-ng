@@ -1,9 +1,9 @@
 <div class="workflow-list-page landing-page">
   <app-waiting *ngIf="waiting"></app-waiting>
-  <app-landing-dialog *ngIf="!waiting"
+  <app-wizard *ngIf="!waiting"
                       [header]="header"
                       [searchPlaceHolder]="searchPlaceHolder"
                       [sideActions]="sideActions"
                       [mainActions]="mainActions"
-                      [barActions]="barActions"></app-landing-dialog>
+                      [barActions]="barActions"></app-wizard>
 </div>
