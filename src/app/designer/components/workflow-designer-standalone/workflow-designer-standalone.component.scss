@@ -1,0 +1,102 @@
+.workflow-designer-standalone {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--app-theme-color-9);
+    .action-set {
+      display: flex;
+      align-items: center;
+      button {
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        i {
+          color: var(--app-theme-color-12);
+          font-size: 20px;
+        }
+        span {
+          color: var(--app-theme-color-12);
+          display: flex;
+          font-size: 13px;
+          font-weight: 500;
+          flex-grow: 1;
+          padding: 4px 10px;
+        }
+
+        &:hover {
+          background: var(--app-theme-color-3);
+        }
+
+        &.layout {
+          i, span {
+            color: var(--app-secondary-color-shade-3);
+          }
+        }
+        &.success {
+          i, span {
+            color: var(--app-success-color);
+          }
+        }
+        &.danger {
+          i, span {
+            color: var(--app-danger-color);
+          }
+        }
+        &.warning {
+          i, span {
+            color: var(--app-warning-color);
+          }
+        }
+        &.primary {
+          i, span {
+            color: var(--app-primary-color);
+          }
+        }
+      }
+
+      &.reverse {
+      }
+    }
+  }
+  .tabs-header {
+    border-bottom: 1px solid var(--app-theme-color-9);
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      li {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 5px;
+
+        &:hover {
+          background: var(--app-theme-color-3);
+        }
+        &.selected {
+          background: var(--app-secondary-color-shade-1);
+          color: var(--app-theme-color-15);
+          i, span {
+            color: var(--app-theme-color-15);
+          }
+        }
+        i {
+          margin-inline-end: 5px;
+          font-size: 16px;
+        }
+        span {
+          margin-inline-end: 20px;
+          font-size: 12px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
