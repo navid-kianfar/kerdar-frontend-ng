@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActionViewModel} from '../../core/dtos/landing-dialog-dtos';
+import {CommandViewModel, WaitingLoaderInfo} from '../../core/dtos/landing-dialog-dtos';
 
 @Component({
   selector: 'app-welcome',
@@ -10,9 +10,9 @@ export class WelcomeComponent implements OnInit {
   searchPlaceHolder: string = '';
   header: string = '';
   waiting: boolean = false;
-  barActions: ActionViewModel[] = [];
-  sideActions: ActionViewModel[] = [];
-  mainActions: ActionViewModel[] = [];
+  barActions: CommandViewModel[] = [];
+  sideActions: CommandViewModel[] = [];
+  mainActions: CommandViewModel[] = [];
   constructor() { }
 
   ngOnInit(): void {
@@ -50,7 +50,7 @@ export class WelcomeComponent implements OnInit {
                 title: 'Delete Application',
                 subTitle: 'All related workflows will be deleted',
                 icon: 'ti ti-trash',
-                execute: (self: ActionViewModel) => {
+                execute: (self: CommandViewModel) => {
                   console.log('COMMAND: ', self.title);
                 }
               },
@@ -58,7 +58,7 @@ export class WelcomeComponent implements OnInit {
                 title: 'Clone Application',
                 subTitle: 'All related workflows will be cloned',
                 icon: 'ti ti-copy',
-                execute: (self: ActionViewModel) => {
+                execute: (self: CommandViewModel) => {
                   console.log('COMMAND: ', self.title);
                 }
               },
@@ -66,7 +66,7 @@ export class WelcomeComponent implements OnInit {
                 title: 'Archive Application',
                 subTitle: 'All related workflows will be suspended',
                 icon: 'ti ti-archive',
-                execute: (self: ActionViewModel) => {
+                execute: (self: CommandViewModel) => {
                   console.log('COMMAND: ', self.title);
                 }
               }

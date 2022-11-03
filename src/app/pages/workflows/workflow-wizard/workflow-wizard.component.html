@@ -1,5 +1,5 @@
 <div class="workflow-list-page landing-page">
-  <app-waiting *ngIf="waiting"></app-waiting>
+  <app-waiting *ngIf="waiting" [loader]="waitingLoaderInfo"></app-waiting>
   <app-wizard *ngIf="!waiting"
                       [header]="header"
                       [searchPlaceHolder]="searchPlaceHolder"

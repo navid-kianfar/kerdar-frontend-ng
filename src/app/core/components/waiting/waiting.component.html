@@ -1,8 +1,24 @@
 <div class="app-waiting">
-  <span class="loader"></span>
-  <div class="title">Processing... Please wait!</div>
-  <div class="sub-title">
-    <i class="ti ti-pyramid"></i>
-    <span>Kerdar Workflow</span>
+
+  <div class="normal-container" *ngIf="!loader">
+    <span class="loader"></span>
+    <div class="title">Processing... Please wait!</div>
+    <div class="sub-title">
+      <i class="ti ti-pyramid"></i>
+      <span>Kerdar Workflow</span>
+    </div>
   </div>
+
+  <div class="dialog-container" *ngIf="loader">
+    <div class="header">{{ loader.title }}</div>
+    <div class="content">
+      <div class="current">{{loader.current}}</div>
+      <mat-progress-bar mode="indeterminate" *ngIf="loader.indeterminate"></mat-progress-bar>
+      <mat-progress-bar mode="determinate"
+                        [value]="loader.percentage"
+                        *ngIf="loader.percentage"></mat-progress-bar>
+      <div class="description" *ngIf="loader.description">{{loader.description}}</div>
+    </div>
+  </div>
+
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActionViewModel} from '../../../core/dtos/landing-dialog-dtos';
+import {CommandViewModel, WaitingLoaderInfo} from '../../../core/dtos/landing-dialog-dtos';
 
 @Component({
   selector: 'app-workflow-wizard',
@@ -10,13 +10,21 @@ export class WorkflowWizardComponent implements OnInit {
   searchPlaceHolder: string = '';
   header: string = '';
   waiting: boolean = false;
-  barActions: ActionViewModel[] = [];
-  sideActions: ActionViewModel[] = [];
-  mainActions: ActionViewModel[] = [];
+  barActions: CommandViewModel[] = [];
+  sideActions: CommandViewModel[] = [];
+  mainActions: CommandViewModel[] = [];
+  waitingLoaderInfo: WaitingLoaderInfo = { title: '', current: '' };
   constructor() { }
 
   ngOnInit(): void {
     this.waiting = true;
+    this.waitingLoaderInfo = {
+      title: 'Please wait, the workflows are being downloaded',
+      current: 'This is the current operation going on',
+      indeterminate: true,
+      percentage: 0,
+      description: 'This is a dummy text to check the description'
+    };
     setTimeout(() => this.waiting = false, 1000);
     this.setFakeData();
   }

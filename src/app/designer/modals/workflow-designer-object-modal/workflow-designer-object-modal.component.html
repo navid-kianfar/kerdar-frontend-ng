@@ -1,110 +1,34 @@
 <div class="workflow-designer-object-modal">
   <div class="modal-header">
     <ul>
-      <li class="selected success">
-        <i class="ti ti-puzzle"></i>
-        <span>Components</span>
-        <div class="highlight"></div>
-      </li>
-      <li class="info">
-        <i class="ti ti-cpu"></i>
-        <span>Primitives</span>
-        <div class="highlight"></div>
-      </li>
-      <li class="warning">
-        <i class="ti ti-activity"></i>
-        <span>Events</span>
-        <div class="highlight"></div>
-      </li>
-      <li class="primary">
-        <i class="ti ti-arrows-split-2"></i>
-        <span>Workflows</span>
+      <li *ngFor="let sheet of data.sheets"
+          (click)="switchSheet(sheet)"
+          [class.selected]="sheet.selected">
+        <i [class]="sheet.icon" *ngIf="sheet.icon"></i>
+        <span>{{ sheet.title }}</span>
         <div class="highlight"></div>
       </li>
     </ul>
   </div>
   <div class="modal-content">
     <div class="filter">
-      <input type="text" placeholder="Search components...">
+      <input type="text" [(ngModel)]="filterText" [placeholder]="placeHolder">
     </div>
     <div class="items">
 
-      <div class="item">
+      <div *ngFor="let item of items | filterBy:['title', 'subTitle']:filterText"
+           (click)="pickItem(item)"
+           class="item" [class.selected]="item.selected">
 
         <div class="image-wrapper">
-          <i class="ti ti-puzzle"></i>
+          <i [class]="item.icon"></i>
         </div>
         <div class="info-wrapper">
-          <div class="title">Component title</div>
+          <div class="title">{{item.title}}</div>
+          <div class="sub-title" *ngIf="item.subTitle">{{item.subTitle}}</div>
         </div>
         <div class="module-wrapper">
-          <div class="name">Omni Channel</div>
-        </div>
-
-      </div>
-      <div class="item selected">
-
-        <div class="image-wrapper">
-          <i class="ti ti-puzzle"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Component title</div>
-          <div class="sub-title">this is a description to be shown for this title and it is going to be very very long text so it would fuck the ui i suppose? lets find out!</div>
-        </div>
-        <div class="module-wrapper">
-          <div class="name">Omni Channel</div>
-        </div>
-
-      </div>
-      <div class="item">
-
-        <div class="image-wrapper">
-          <i class="ti ti-puzzle"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Component title</div>
-        </div>
-        <div class="module-wrapper">
-          <div class="name">Omni Channel</div>
-        </div>
-
-      </div>
-      <div class="item">
-
-        <div class="image-wrapper">
-          <i class="ti ti-puzzle"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Component title</div>
-        </div>
-        <div class="module-wrapper">
-          <div class="name">Omni Channel</div>
-        </div>
-
-      </div>
-      <div class="item">
-
-        <div class="image-wrapper">
-          <i class="ti ti-puzzle"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Component title</div>
-        </div>
-        <div class="module-wrapper">
-          <div class="name">Omni Channel</div>
-        </div>
-
-      </div>
-      <div class="item">
-
-        <div class="image-wrapper">
-          <i class="ti ti-puzzle"></i>
-        </div>
-        <div class="info-wrapper">
-          <div class="title">Component title</div>
-        </div>
-        <div class="module-wrapper">
-          <div class="name">Omni Channel</div>
+          <div class="name">{{ item.section }}</div>
         </div>
 
       </div>

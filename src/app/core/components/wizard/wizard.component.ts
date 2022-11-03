@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
-import {ActionViewModel} from '../../dtos/landing-dialog-dtos';
+import {CommandViewModel} from '../../dtos/landing-dialog-dtos';
 import {Router} from '@angular/router';
 import {filter, fromEvent, Subscription, take} from 'rxjs';
 import {Overlay, OverlayRef} from '@angular/cdk/overlay';
@@ -17,9 +17,9 @@ export class WizardComponent implements OnInit {
   @Input() showActionBar: boolean = true;
   @Input() showSidebar: boolean = true;
   @Input() showFilter: boolean = true;
-  @Input() barActions: ActionViewModel[] = [];
-  @Input() sideActions: ActionViewModel[] = [];
-  @Input() mainActions: ActionViewModel[] = [];
+  @Input() barActions: CommandViewModel[] = [];
+  @Input() sideActions: CommandViewModel[] = [];
+  @Input() mainActions: CommandViewModel[] = [];
 
   filterText: string = '';
   contextMenuSubscription?: Subscription;
@@ -39,7 +39,7 @@ export class WizardComponent implements OnInit {
     }
   }
 
-  pickSide(side: ActionViewModel) {
+  pickSide(side: CommandViewModel) {
     this.sideActions.forEach(a => a.selected = false);
     side.selected = true;
     if (side.subActions && side.subActions.length) {
@@ -47,7 +47,7 @@ export class WizardComponent implements OnInit {
     }
   }
 
-  async pickMain(main: ActionViewModel) {
+  async pickMain(main: CommandViewModel) {
     this.mainActions.forEach(a => a.selected = false);
     main.selected = true;
     if (main.url) {
@@ -55,13 +55,13 @@ export class WizardComponent implements OnInit {
     }
   }
 
-  showSettings(main: ActionViewModel, $event: MouseEvent) {
+  showSettings(main: CommandViewModel, $event: MouseEvent) {
     $event.stopPropagation();
     $event.preventDefault();
     this.showContextMenu($event, main.subActions || []);
   }
 
-  showContextMenu({ x, y }: MouseEvent, actions: ActionViewModel[]) {
+  showContextMenu({ x, y }: MouseEvent, actions: CommandViewModel[]) {
     this.closeContextMenu();
     const positionStrategy = this.overlay.position()
       .flexibleConnectedTo({ x, y })
@@ -102,7 +102,7 @@ export class WizardComponent implements OnInit {
     }
   }
 
-  contextMenuAction(action: ActionViewModel, $event: MouseEvent) {
+  contextMenuAction(action: CommandViewModel, $event: MouseEvent) {
     $event.stopPropagation();
     $event.preventDefault();
     this.closeContextMenu();

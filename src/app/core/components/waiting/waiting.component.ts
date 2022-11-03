@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {WaitingLoaderInfo} from '../../dtos/landing-dialog-dtos';
 
 @Component({
   selector: 'app-waiting',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./waiting.component.scss']
 })
 export class WaitingComponent implements OnInit {
-
+  @Input() loader?: WaitingLoaderInfo;
   constructor() { }
 
   ngOnInit(): void {

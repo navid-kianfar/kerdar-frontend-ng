@@ -4,6 +4,8 @@ import {
   WorkflowDesignerObjectModalComponent
 } from './modals/workflow-designer-object-modal/workflow-designer-object-modal.component';
 import { WorkflowDesignerStandaloneComponent } from './components/workflow-designer-standalone/workflow-designer-standalone.component';
+import {CoreModule} from '../core/core.module';
+import {FormsModule} from '@angular/forms';
 
 
 
@@ -13,7 +15,9 @@ import { WorkflowDesignerStandaloneComponent } from './components/workflow-desig
     WorkflowDesignerStandaloneComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CoreModule,
+    FormsModule
   ],
   exports: [ WorkflowDesignerStandaloneComponent ]
 })
