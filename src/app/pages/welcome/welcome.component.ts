@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CommandViewModel, WaitingLoaderInfo} from '../../core/dtos/landing-dialog-dtos';
+import {CommandViewModel, WaitingLoaderInfo} from '../../core/dtos/shared-dtos';
 
 @Component({
   selector: 'app-welcome',

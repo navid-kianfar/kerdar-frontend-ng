@@ -5,7 +5,7 @@ import {
   WorkflowDesignerNodeModalResponse,
   WorkflowDesignerNodeSheet
 } from '../../dtos/designer-dtos';
-import {CommandViewModel} from '../../../core/dtos/landing-dialog-dtos';
+import {CommandViewModel} from '../../../core/dtos/shared-dtos';
 
 @Component({
   selector: 'app-workflow-designer-object-modal',

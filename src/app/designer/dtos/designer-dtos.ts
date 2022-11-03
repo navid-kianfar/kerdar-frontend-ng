@@ -1,4 +1,4 @@
-import {CommandViewModel} from '../../core/dtos/landing-dialog-dtos';
+import {CommandViewModel} from '../../core/dtos/shared-dtos';
 
 export interface WorkflowDesignerNodeModalResponse {
   sheet: WorkflowDesignerNodeSheet,
