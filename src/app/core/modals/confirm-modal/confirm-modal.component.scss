@@ -1,0 +1,67 @@
+.confirm-modal {
+  border: 1px solid var(--app-theme-color-0);
+  display: flex;
+  flex-direction: column;
+  background: var(--app-theme-color-3);
+  padding: 20px 20px 20px 0;
+  max-width: 600px;
+
+  .info-box {
+    display: flex;
+    align-items: center;
+
+    .icon-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      min-width: 100px;
+      i {
+        font-size: 50px;
+        color: var(--app-warning-color);
+      }
+    }
+    .text-box {
+      display: flex;
+      flex-direction: column;
+      .title {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      .sub-title {
+        font-weight: 500;
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+      .description {
+        font-weight: 300;
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
+      mat-checkbox {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .action-box{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    button {
+      cursor: pointer;
+      margin-inline-end: 10px;
+      border: none;
+      padding: 10px;
+      border-radius: 3px;
+      &.action-btn:not([disabled]) {
+        background: var(--app-secondary-color-shade-2);
+        color: var(--app-theme-color-15);
+      }
+      &.cancel-btn:not([disabled])  {
+        background: var(--app-theme-color-5);
+        color: var(--app-theme-color-15);
+      }
+    }
+  }
+}

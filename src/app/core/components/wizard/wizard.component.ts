@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
-import {CommandViewModel} from '../../dtos/shared-dtos';
+import {CommandViewModel} from '../../types/shared-dtos';
 import {Router} from '@angular/router';
 import {filter, fromEvent, Subscription, take} from 'rxjs';
 import {Overlay, OverlayRef} from '@angular/cdk/overlay';

@@ -1,0 +1,22 @@
+<div class="confirm-modal no-select">
+  <div class="info-box">
+    <div class="icon-wrapper">
+      <i [class]="data.icon"></i>
+    </div>
+    <div class="text-box">
+      <div class="title">{{data.title}}</div>
+      <div class="sub-title">{{data.subTitle}}</div>
+      <mat-checkbox [(ngModel)]="agreed"
+                    *ngIf="data.agreement">{{data.agreement}}</mat-checkbox>
+      <div class="description">{{data.description}}</div>
+    </div>
+  </div>
+  <div class="action-box">
+    <button [disabled]="!agreed && data.agreementRequired" class="action-btn">
+      {{ data.confirmLabel }}
+    </button>
+    <button class="cancel-btn">
+      {{ data.cancelLabel }}
+    </button>
+  </div>
+</div>

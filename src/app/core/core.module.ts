@@ -5,22 +5,26 @@ import {FormsModule} from '@angular/forms';
 import { WaitingComponent } from './components/waiting/waiting.component';
 import { FilterByPipe } from './pipes/filter-by.pipe';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { ConfirmModalComponent } from './modals/confirm-modal/confirm-modal.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
     declarations: [
         WizardComponent,
         WaitingComponent,
-        FilterByPipe
+        FilterByPipe,
+        ConfirmModalComponent
     ],
   exports: [
     WizardComponent,
     WaitingComponent,
     FilterByPipe
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    MatProgressBarModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        MatProgressBarModule,
+        MatCheckboxModule
+    ]
 })
 export class CoreModule { }

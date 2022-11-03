@@ -17,13 +17,13 @@
       <button (click)="addNode()" class="primary">
         <i class="ti ti-layout-grid-add"></i>
       </button>
-      <button class="success">
+      <button (click)="saveWorkflow($event)" class="success">
         <i class="ti ti-device-floppy"></i>
       </button>
-      <button class="warning">
+      <button (click)="rearrangeLayout($event)" class="warning">
         <i class="ti ti-affiliate"></i>
       </button>
-      <button class="danger">
+      <button (click)="resetWorkflow($event)" class="danger">
         <i class="ti ti-refresh"></i>
       </button>
     </div>

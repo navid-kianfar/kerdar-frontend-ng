@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {WaitingLoaderInfo} from '../../../core/dtos/shared-dtos';
+import {WaitingLoaderInfo} from '../../../core/types/shared-dtos';
 
 @Component({
   selector: 'app-workflow-designer',
@@ -21,6 +21,6 @@ export class WorkflowDesignerComponent implements OnInit {
       percentage: 0,
       description: '32 components, 13 events'
     };
-    setTimeout(() => this.waiting = false, 10000);
+    setTimeout(() => this.waiting = false, 1000);
   }
 }

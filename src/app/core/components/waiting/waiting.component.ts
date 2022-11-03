@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {WaitingLoaderInfo} from '../../dtos/shared-dtos';
+import {WaitingLoaderInfo} from '../../types/shared-dtos';
 
 @Component({
   selector: 'app-waiting',
