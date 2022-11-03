@@ -198,3 +198,35 @@
     }
   }
 }
+
+.context-menu {
+  border: 1px solid var(--app-theme-color-5);
+  background-color: var(--app-theme-color-3);
+  color: var(--app-theme-color-14);
+  font-size: 13px;
+  z-index: 1000;
+  box-shadow: 0 0 12pt var(--app-theme-color-1);
+  border-radius: 4pt;
+  padding: 0.5em 0 0.5em 0;
+  animation: fadeIn .1s ease-out;
+  opacity: 1;
+  display: block;
+
+  .context-menu-item {
+    padding: 5px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    i {
+      margin-inline-end: 5px;
+    }
+    span {
+      font-weight: 500;
+    }
+
+    &:hover {
+      background: var(--app-secondary-color-shade-2);
+    }
+  }
+}

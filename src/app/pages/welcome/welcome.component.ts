@@ -44,7 +44,33 @@ export class WelcomeComponent implements OnInit {
             title: 'Market Place Application',
             subTitle: 'market place is a lead generation platform',
             url: '/app/123456790/workflows/wizard',
-            icon: 'ti ti-stack-2'
+            icon: 'ti ti-stack-2',
+            subActions: [
+              {
+                title: 'Delete Application',
+                subTitle: 'All related workflows will be deleted',
+                icon: 'ti ti-trash',
+                execute: (self: ActionViewModel) => {
+                  console.log('COMMAND: ', self.title);
+                }
+              },
+              {
+                title: 'Clone Application',
+                subTitle: 'All related workflows will be cloned',
+                icon: 'ti ti-copy',
+                execute: (self: ActionViewModel) => {
+                  console.log('COMMAND: ', self.title);
+                }
+              },
+              {
+                title: 'Archive Application',
+                subTitle: 'All related workflows will be suspended',
+                icon: 'ti ti-archive',
+                execute: (self: ActionViewModel) => {
+                  console.log('COMMAND: ', self.title);
+                }
+              }
+            ]
           }
         ]
       },

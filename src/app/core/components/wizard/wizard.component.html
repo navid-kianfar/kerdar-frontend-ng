@@ -1,4 +1,4 @@
-<div class="app-wizard">
+<div class="app-wizard no-select">
   <div *ngIf="header" class="header">{{header}}</div>
   <div class="action-bar">
     <div class="sidebar">
@@ -34,7 +34,7 @@
     <div class="content">
 
       <div class="item"
-           *ngFor="let main of mainActions"
+           *ngFor="let main of mainActions | filterBy:['title', 'subTitle']:filterText"
            (click)="pickMain(main)">
         <div class="image-wrapper">
           <i [class]="main.icon"></i>
@@ -43,11 +43,23 @@
           <div class="title">{{ main.title }}</div>
           <div class="sub-title">{{ main.subTitle }}</div>
         </div>
-        <div class="action-wrapper">
-          <i class="ti ti-settings"></i>
+        <div *ngIf="main.subActions?.length" class="action-wrapper">
+          <i (click)="showSettings(main, $event)" class="ti ti-settings"></i>
         </div>
       </div>
 
     </div>
   </div>
+
+  <ng-template #contextMenu let-actions>
+    <div class="context-menu">
+      <div *ngFor="let action of actions"
+           class="context-menu-item"
+           (click)="contextMenuAction(action, $event)">
+        <i [class]="action.icon" *ngIf="action.icon"></i>
+        <span>{{action.title}}</span>
+      </div>
+    </div>
+  </ng-template>
+
 </div>

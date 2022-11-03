@@ -6,4 +6,5 @@ export interface ActionViewModel {
   selected?: boolean;
 
   subActions?: ActionViewModel[];
+  execute?: (self: ActionViewModel) => void;
 }
