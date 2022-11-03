@@ -9,6 +9,7 @@ import {ConfirmModalRequest, ConfirmModalResponse} from '../../types/shared-dtos
 })
 export class ConfirmModalComponent implements OnInit {
   agreed: boolean = false;
+  option: any = undefined;
 
   constructor(
     public dialogRef: DialogRef<ConfirmModalResponse>,
@@ -19,6 +20,24 @@ export class ConfirmModalComponent implements OnInit {
     this.data.cancelLabel = this.data.cancelLabel || 'Cancel';
     this.data.confirmLabel = this.data.confirmLabel || 'Confirm';
     this.data.icon = this.data.icon || 'ti ti-alert-octagon';
+    if (this.data.options?.length) {
+      this.option = this.data.options[0].value;
+    }
   }
 
+  onAgree($event: MouseEvent) {
+    this.dialogRef.close({
+      confirmed: true,
+      agreed: this.agreed,
+      option: this.option
+    });
+  }
+
+  onCancel($event: MouseEvent) {
+    this.dialogRef.close({
+      confirmed: false,
+      agreed: false,
+      option: undefined
+    });
+  }
 }

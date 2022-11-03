@@ -1,10 +1,11 @@
 import {CommandViewModel} from '../../core/types/shared-dtos';
 
-export interface WorkflowDesignerNodeModalResponse {
+export interface WorkflowDesignerObjectModalResponse {
   sheet: WorkflowDesignerNodeSheet,
   item: CommandViewModel
 }
-export interface WorkflowDesignerNodeModalRequest {
+export interface WorkflowDesignerObjectModalRequest {
+  hideTabs?: boolean,
   sheets: WorkflowDesignerNodeSheet[]
 }
 export interface WorkflowDesignerNodeSheet {

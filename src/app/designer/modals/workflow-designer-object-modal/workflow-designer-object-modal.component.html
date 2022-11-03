@@ -1,5 +1,5 @@
 <div class="workflow-designer-object-modal">
-  <div class="modal-header">
+  <div *ngIf="!data.hideTabs" class="modal-header">
     <ul>
       <li *ngFor="let sheet of data.sheets"
           (click)="switchSheet(sheet)"

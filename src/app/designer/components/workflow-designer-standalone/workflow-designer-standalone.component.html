@@ -7,7 +7,7 @@
       <button class="layout">
         <i class="ti ti-layout-sidebar-right"></i>
       </button>
-      <button>
+      <button (click)="workflowPicker($event)">
         <span>Market Place Project</span>
         <i class="ti ti-arrows-split-2"></i>
         <span>On new message recieved</span>
@@ -34,16 +34,16 @@
       <button class="success">
         <i class="ti ti-bug"></i>
       </button>
-      <button class="warning">
+      <button (click)="openTab('jobs')" class="warning">
         <i class="ti ti-activity"></i>
       </button>
-      <button class="layout">
+      <button (click)="openTab('logs')" class="layout">
         <i class="ti ti-terminal-2"></i>
       </button>
-      <button>
+      <button (click)="openTab('notifications')" >
         <i class="ti ti-bell"></i>
       </button>
-      <button>
+      <button (click)="openTab('settings')" >
         <i class="ti ti-settings"></i>
       </button>
       <button>
@@ -54,35 +54,16 @@
   </div>
   <div class="tabs-header">
     <ul>
-      <li class="selected">
-        <i class="ti ti-drag-drop"></i>
-        <span>Designer</span>
-      </li>
-      <li>
-        <i class="ti ti-activity"></i>
-        <span>Jobs</span>
-        <i class="ti ti-x"></i>
-      </li>
-      <li>
-        <i class="ti ti-bell"></i>
-        <span>Notifications</span>
-        <i class="ti ti-x"></i>
-      </li>
-      <li>
-        <i class="ti ti-terminal-2"></i>
-        <span>Logs</span>
-        <i class="ti ti-x"></i>
-      </li>
-      <li>
-        <i class="ti ti-settings"></i>
-        <span>Settings</span>
-        <i class="ti ti-x"></i>
+      <li (click)="switchTab(tab, $event)" [class.selected]="tab.selected" *ngFor="let tab of tabs">
+        <i [class]="tab.icon"></i>
+        <span>{{tab.title}}</span>
+        <i (click)="closeTab(tab, $event)" *ngIf="tab.dismissible" class="ti ti-x"></i>
       </li>
     </ul>
   </div>
   <div class="tabs-content">
-    <div class="workflow-inner-container">
-
+    <div class="designer-tab" [hidden]="!tab.selected" *ngFor="let tab of tabs">
+      <ng-container *ngComponentOutlet="tab.payload"></ng-container>
     </div>
   </div>
 </div>

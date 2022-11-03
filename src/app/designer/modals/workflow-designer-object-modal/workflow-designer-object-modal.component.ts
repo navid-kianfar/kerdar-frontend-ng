@@ -1,8 +1,8 @@
 import {Component, Inject, Input, OnInit} from '@angular/core';
 import {DIALOG_DATA, DialogRef} from '@angular/cdk/dialog';
 import {
-  WorkflowDesignerNodeModalRequest,
-  WorkflowDesignerNodeModalResponse,
+  WorkflowDesignerObjectModalRequest,
+  WorkflowDesignerObjectModalResponse,
   WorkflowDesignerNodeSheet
 } from '../../dtos/designer-dtos';
 import {CommandViewModel} from '../../../core/types/shared-dtos';
@@ -18,8 +18,8 @@ export class WorkflowDesignerObjectModalComponent implements OnInit {
   placeHolder: string = '';
 
   constructor(
-    public dialogRef: DialogRef<WorkflowDesignerNodeModalResponse>,
-    @Inject(DIALOG_DATA) public data: WorkflowDesignerNodeModalRequest) { }
+    public dialogRef: DialogRef<WorkflowDesignerObjectModalResponse>,
+    @Inject(DIALOG_DATA) public data: WorkflowDesignerObjectModalRequest) { }
 
   ngOnInit(): void {
     const first = this.data.sheets[0];

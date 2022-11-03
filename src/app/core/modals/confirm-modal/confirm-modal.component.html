@@ -6,16 +6,31 @@
     <div class="text-box">
       <div class="title">{{data.title}}</div>
       <div class="sub-title">{{data.subTitle}}</div>
+
       <mat-checkbox [(ngModel)]="agreed"
                     *ngIf="data.agreement">{{data.agreement}}</mat-checkbox>
+
+      <div class="options" *ngIf="data.options?.length">
+        <mat-radio-group [(ngModel)]="option">
+          <mat-radio-button class="radio-option-wrapper"
+                            [value]="option.value"
+                            *ngFor="let option of data.options">
+            <div class="option-title">{{option.title}}</div>
+            <div class="option-sub-title">{{option.subTitle}}</div>
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+
       <div class="description">{{data.description}}</div>
     </div>
   </div>
   <div class="action-box">
-    <button [disabled]="!agreed && data.agreementRequired" class="action-btn">
+    <button [disabled]="(!agreed && data.agreementRequired) || (option === undefined && data.options?.length)"
+            (click)="onAgree($event)"
+            class="action-btn">
       {{ data.confirmLabel }}
     </button>
-    <button class="cancel-btn">
+    <button (click)="onCancel($event)" class="cancel-btn">
       {{ data.cancelLabel }}
     </button>
   </div>

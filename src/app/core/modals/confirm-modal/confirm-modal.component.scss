@@ -41,6 +41,13 @@
       mat-checkbox {
         margin-bottom: 10px;
       }
+
+      .options {
+        padding: 10px 0;
+        mat-radio-button {
+          margin-bottom: 10px;
+        }
+      }
     }
   }
   .action-box{

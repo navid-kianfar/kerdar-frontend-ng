@@ -1,5 +1,7 @@
 export interface CommandViewModel {
+  dismissible?: boolean;
   title: string;
+  id?: string;
   subTitle?: string;
   icon?: string;
   section?: string;
@@ -29,7 +31,7 @@ export interface ConfirmModalRequest {
 }
 export interface ConfirmModalResponse {
   confirmed: boolean;
-  agreement?: boolean;
+  agreed?: boolean;
   option?: any;
 }
 export interface ConfirmModalOption {

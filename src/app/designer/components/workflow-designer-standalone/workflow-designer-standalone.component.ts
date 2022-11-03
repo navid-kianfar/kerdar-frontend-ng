@@ -1,12 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import {WorkflowDesignerNodeModalRequest, WorkflowDesignerNodeModalResponse} from '../../dtos/designer-dtos';
+import {WorkflowDesignerObjectModalRequest, WorkflowDesignerObjectModalResponse} from '../../dtos/designer-dtos';
 import {
   WorkflowDesignerObjectModalComponent
 } from '../../modals/workflow-designer-object-modal/workflow-designer-object-modal.component';
 import {ModalService} from '../../../core/services/modal.service';
-import {ConfirmModalRequest, ConfirmModalResponse} from '../../../core/types/shared-dtos';
+import {CommandViewModel, ConfirmModalRequest, ConfirmModalResponse} from '../../../core/types/shared-dtos';
 import {ConfirmModalComponent} from '../../../core/modals/confirm-modal/confirm-modal.component';
 import {WorkflowSavePolicy} from '../../../core/types/enums';
+import {WorkflowDesignerPlateComponent} from '../workflow-designer-plate/workflow-designer-plate.component';
+import {WorkflowDesignerSettingsComponent} from '../workflow-designer-settings/workflow-designer-settings.component';
+import {WorkflowDesignerLogsComponent} from '../workflow-designer-logs/workflow-designer-logs.component';
+import {
+  WorkflowDesignerNotificationsComponent
+} from '../workflow-designer-notifications/workflow-designer-notifications.component';
+import {WorkflowDesignerJobsComponent} from '../workflow-designer-jobs/workflow-designer-jobs.component';
 
 @Component({
   selector: 'app-workflow-designer-standalone',
@@ -15,6 +22,9 @@ import {WorkflowSavePolicy} from '../../../core/types/enums';
 })
 export class WorkflowDesignerStandaloneComponent implements OnInit {
   waiting: boolean = false;
+  tabs: CommandViewModel[] = [];
+  availableTabs: CommandViewModel[] = [];
+  selectedTab?: CommandViewModel;
 
   constructor(
     private readonly modalService: ModalService
@@ -22,12 +32,122 @@ export class WorkflowDesignerStandaloneComponent implements OnInit {
 
   ngOnInit(): void {
     this.waiting = true;
+    this.tabs = [
+      {
+        title: 'Designer',
+        icon: 'ti ti-drag-drop',
+        selected: true,
+        dismissible: false,
+        payload: WorkflowDesignerPlateComponent
+      },
+    ];
+    this.availableTabs = [
+      {
+        id: 'jobs',
+        title: 'Jobs',
+        icon: 'ti ti-activity',
+        dismissible: true,
+        payload: WorkflowDesignerJobsComponent,
+      },
+      {
+        id: 'notifications',
+        title: 'Notifications',
+        icon: 'ti ti-bell',
+        dismissible: true,
+        payload: WorkflowDesignerNotificationsComponent,
+      },
+      {
+        id: 'logs',
+        title: 'Logs',
+        icon: 'ti ti-terminal-2',
+        dismissible: true,
+        payload: WorkflowDesignerLogsComponent,
+      },
+      {
+        id: 'settings',
+        title: 'Settings',
+        icon: 'ti ti-settings',
+        dismissible: true,
+        payload: WorkflowDesignerSettingsComponent,
+      },
+    ]
     setTimeout(() => this.waiting = false, 1000);
+    this.switchTab(this.tabs[0]);
     this.setFakeData();
   }
 
   private setFakeData() {
 
+  }
+
+  openTab(tabId: string) {
+    let found = this.tabs.find(t => t.id === tabId);
+    if (found) {
+      // already injected, switch to tab
+      this.switchTab(found);
+      return;
+    }
+    found = this.availableTabs.find(t => t.id === tabId)!;
+    this.tabs.push(found);
+    this.switchTab(found);
+  }
+
+  async workflowPicker($event: MouseEvent) {
+    this.cancelEvent($event);
+    const data = {
+      hideTabs: true,
+      sheets: [
+        {
+          selected: true,
+          title: 'Workflows',
+          placeHolder: 'Search workflows...',
+          icon: 'ti ti-arrows-split-2',
+          items: [
+            {
+              title: 'On message received',
+              icon: 'ti ti-arrows-split-2',
+              section: 'Market Place',
+            },
+            {
+              title: 'Airport pickups',
+              icon: 'ti ti-arrows-split-2',
+              section: 'Market Place',
+            },
+            {
+              title: 'Accounting bills',
+              icon: 'ti ti-arrows-split-2',
+              section: 'Market Place',
+            },
+            {
+              title: 'Component title',
+              icon: 'ti ti-arrows-split-2',
+              section: 'Market Place',
+            },
+            {
+              title: 'Component title',
+              icon: 'ti ti-arrows-split-2',
+              section: 'Market Place',
+            },
+            {
+              title: 'Component title',
+              icon: 'ti ti-arrows-split-2',
+              section: 'Market Place',
+            },
+            {
+              title: 'Component title',
+              icon: 'ti ti-arrows-split-2',
+              section: 'Market Place',
+            },
+          ]
+        },
+      ]
+    };
+    const result = await this.modalService.show<
+      WorkflowDesignerObjectModalRequest,
+      WorkflowDesignerObjectModalResponse
+      >(WorkflowDesignerObjectModalComponent, data);
+
+    console.log(result);
   }
 
   async addNode() {
@@ -82,25 +202,63 @@ export class WorkflowDesignerStandaloneComponent implements OnInit {
           title: 'Primitives',
           placeHolder: 'Search components...',
           icon: 'ti ti-cpu',
-          items: []
+          items: [
+            {
+              title: 'If',
+              icon: 'ti ti-question-mark',
+              section: 'Conditions',
+            },
+            {
+              title: 'For',
+              icon: 'ti ti-curly-loop',
+              section: 'Conditions',
+            },
+            {
+              title: 'While',
+              icon: 'ti ti-curly-loop',
+              section: 'Conditions',
+            },
+          ]
         },
         {
           title: 'Events',
           placeHolder: 'Search components...',
           icon: 'ti ti-activity',
-          items: []
+          items: [
+            {
+              title: 'On message received',
+              icon: 'ti ti-activity',
+              section: 'Omni Channel',
+            }
+          ]
         },
         {
           title: 'Workflows',
           placeHolder: 'Search components...',
           icon: 'ti ti-arrows-split-2',
-          items: []
+          items: [
+            {
+              title: 'Premium calculation',
+              icon: 'ti ti-arrows-split-2',
+              section: 'Market Place',
+            },
+            {
+              title: 'Airport pickups',
+              icon: 'ti ti-arrows-split-2',
+              section: 'Market Place',
+            },
+            {
+              title: 'Accounting bills',
+              icon: 'ti ti-arrows-split-2',
+              section: 'Market Place',
+            },
+          ]
         }
       ]
     };
     const result = await this.modalService.show<
-      WorkflowDesignerNodeModalRequest,
-      WorkflowDesignerNodeModalResponse
+      WorkflowDesignerObjectModalRequest,
+      WorkflowDesignerObjectModalResponse
     >(WorkflowDesignerObjectModalComponent, data);
 
     console.log(result);
@@ -116,23 +274,23 @@ export class WorkflowDesignerStandaloneComponent implements OnInit {
       confirmLabel: 'Save changes',
       options: [
         {
+          title: 'Do not affect',
+          subTitle: 'Save the draft of new definition but do not interrupt the current flow',
+          icon: 'ti ti-road',
+          value: WorkflowSavePolicy.DoNotAffect
+        },
+        {
           title: 'Apply only to new requests',
           subTitle: 'The pending jobs will continue with previous definition, new requests will pick up new definition',
           icon: 'ti ti-ease-in-out-control-points',
           value: WorkflowSavePolicy.OnlyNewRequest
         },
         {
-          title: 'Pause and re-new existing flow',
+          title: 'Stop pending requests and use new definition',
           subTitle: 'The pending jobs will stop and will be picked up with the new definition',
           icon: 'ti ti-traffic-cone',
           value: WorkflowSavePolicy.Immediately
         },
-        {
-          title: 'Do not affect',
-          subTitle: 'Save the draft of new definition but do not interrupt the current flow',
-          icon: 'ti ti-road',
-          value: WorkflowSavePolicy.DoNotAffect
-        }
       ]
     });
     console.log(result);
@@ -166,4 +324,24 @@ export class WorkflowDesignerStandaloneComponent implements OnInit {
     $event.preventDefault();
     $event.stopPropagation();
   }
+
+  closeTab(tab: CommandViewModel, $event: MouseEvent) {
+    this.cancelEvent($event);
+    this.tabs = this.tabs.filter(t => t !== tab);
+    this.availableTabs.push(tab);
+    if (tab.selected) {
+      this.switchTab(this.tabs[0]);
+    }
+  }
+  switchTab(tab: CommandViewModel, $event?: MouseEvent) {
+    if ($event) {
+      this.cancelEvent($event);
+    }
+    if (this.selectedTab) {
+      this.selectedTab.selected = false;
+    }
+    this.selectedTab = tab;
+    this.selectedTab.selected = true;
+  }
+
 }

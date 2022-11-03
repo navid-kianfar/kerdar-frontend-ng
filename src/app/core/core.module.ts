@@ -7,6 +7,7 @@ import { FilterByPipe } from './pipes/filter-by.pipe';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ConfirmModalComponent } from './modals/confirm-modal/confirm-modal.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
     declarations: [
@@ -20,11 +21,12 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     WaitingComponent,
     FilterByPipe
   ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        MatProgressBarModule,
-        MatCheckboxModule
-    ]
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatProgressBarModule,
+    MatCheckboxModule,
+    MatRadioModule
+  ]
 })
 export class CoreModule { }
