@@ -1,5 +1,5 @@
 <div class="workflow-designer-page landing-page" [class.landing-page]="waiting">
-  <app-waiting *ngIf="waiting"></app-waiting>
+  <app-waiting *ngIf="waiting" [loader]="waitingLoaderInfo"></app-waiting>
   <app-workflow-designer-standalone *ngIf="!waiting">
   </app-workflow-designer-standalone>
 </div>
