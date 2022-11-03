@@ -1,3 +1,6 @@
 <div class="app-router-wrapper">
-  <router-outlet></router-outlet>
+  <app-waiting *ngIf="!appInitializerProvider.loaded"></app-waiting>
+  <ng-container *ngIf="appInitializerProvider.loaded">
+    <router-outlet></router-outlet>
+  </ng-container>
 </div>
