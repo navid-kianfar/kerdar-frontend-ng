@@ -14,6 +14,7 @@ import {
   WorkflowDesignerNotificationsComponent
 } from '../workflow-designer-notifications/workflow-designer-notifications.component';
 import {WorkflowDesignerJobsComponent} from '../workflow-designer-jobs/workflow-designer-jobs.component';
+import {LayoutService} from '../../../core/services/layout.service';
 
 @Component({
   selector: 'app-workflow-designer-standalone',
@@ -27,7 +28,8 @@ export class WorkflowDesignerStandaloneComponent implements OnInit {
   selectedTab?: CommandViewModel;
 
   constructor(
-    private readonly modalService: ModalService
+    private readonly modalService: ModalService,
+    readonly layoutService: LayoutService
   ) { }
 
   ngOnInit(): void {

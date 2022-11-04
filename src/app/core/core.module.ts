@@ -26,7 +26,7 @@ import { RadioButtonComponent } from './components/radio-button/radio-button.com
   exports: [
     WizardComponent,
     WaitingComponent,
-    FilterByPipe
+    FilterByPipe,
   ],
   imports: [
     HttpClientModule,

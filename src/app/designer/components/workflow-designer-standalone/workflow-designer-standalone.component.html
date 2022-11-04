@@ -1,6 +1,9 @@
 <div class="workflow-designer-standalone">
   <div class="header">
     <div class="action-set">
+      <button (click)="layoutService.toggle()" class="">
+        <i [class]="layoutService.manager.isLight() ? 'ti ti-moon' : 'ti ti-sun'"></i>
+      </button>
       <button class="layout">
         <i class="ti ti-layout-sidebar"></i>
       </button>
