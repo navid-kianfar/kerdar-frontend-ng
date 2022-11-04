@@ -11,19 +11,10 @@
 
       <div class="options" *ngIf="data.options?.length">
 
-        <app-radio-button [(model)]="option" [items]="data.options!">
-<!--          <div class="option-title">{{opt.title}}</div>-->
-<!--          <div class="option-sub-title">{{opt.subTitle}}</div>-->
-        </app-radio-button>
-
-<!--        <mat-radio-group [(ngModel)]="option">-->
-<!--          <mat-radio-button class="radio-option-wrapper"-->
-<!--                            [value]="option.value"-->
-<!--                            *ngFor="let option of data.options">-->
-<!--            <div class="option-title">{{option.title}}</div>-->
-<!--            <div class="option-sub-title">{{option.subTitle}}</div>-->
-<!--          </mat-radio-button>-->
-<!--        </mat-radio-group>-->
+        <app-radio-button [(model)]="option"
+                          [items]="data.options!"
+                          [template]="radioTemplate"
+                          textField="title"></app-radio-button>
       </div>
 
       <div class="description">{{data.description}}</div>
@@ -40,3 +31,9 @@
     </button>
   </div>
 </div>
+<ng-template #radioTemplate let-radio>
+  <div class="radio-option-wrapper">
+    <div class="option-title">{{radio.title}}</div>
+    <div class="option-sub-title">{{radio.subTitle}}</div>
+  </div>
+</ng-template>

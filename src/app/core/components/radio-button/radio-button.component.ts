@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, TemplateRef} from '@angular/core';
 
 @Component({
   selector: 'app-radio-button',
@@ -7,11 +7,13 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class RadioButtonComponent implements OnInit {
   @Input() valueField: string = 'value';
+  @Input() textField: string = '';
   @Input() disabled?: boolean = false;
   @Input() model: any;
   @Output() modelChange = new EventEmitter<any>();
   @Input() items: any[] = [];
   @Output() itemsChange = new EventEmitter<any[]>();
+  @Input() template?: TemplateRef<any>;
 
   constructor() { }
 
