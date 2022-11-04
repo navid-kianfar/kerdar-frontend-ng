@@ -1,0 +1,8 @@
+<div (click)="toggle($event)" class="app-checkbox">
+  <div class="icon-wrapper">
+    <i [class]="model ? 'ti ti-square-check' : 'ti ti-square'"></i>
+  </div>
+  <div class="content-wrapper">
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -11,13 +11,17 @@ import {MatRadioModule} from '@angular/material/radio';
 import {AppInitializerFactory, AppInitializerProvider} from './services/app.initializer';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HttpInterceptor} from './services/http.interceptor';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { RadioButtonComponent } from './components/radio-button/radio-button.component';
 
 @NgModule({
   declarations: [
     WizardComponent,
     WaitingComponent,
     FilterByPipe,
-    ConfirmModalComponent
+    ConfirmModalComponent,
+    CheckboxComponent,
+    RadioButtonComponent
   ],
   exports: [
     WizardComponent,
@@ -28,9 +32,7 @@ import {HttpInterceptor} from './services/http.interceptor';
     HttpClientModule,
     CommonModule,
     FormsModule,
-    MatProgressBarModule,
-    MatCheckboxModule,
-    MatRadioModule
+    MatProgressBarModule
   ],
   providers: [
     {

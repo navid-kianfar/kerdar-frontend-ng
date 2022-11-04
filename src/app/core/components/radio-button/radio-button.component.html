@@ -1,0 +1,10 @@
+<div class="app-radio-button">
+  <div class="radio-item" (click)="pick(radio, $event)" *ngFor="let radio of items">
+    <div class="icon-wrapper">
+      <i [class]="model === radio[valueField] ? 'ti ti-circle-check' : 'ti ti-circle'"></i>
+    </div>
+    <div class="content-wrapper">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
