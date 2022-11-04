@@ -1,0 +1,22 @@
+html[data-theme="light"] {
+  .app-wizard .wrapper .content {
+    background: var(--app-theme-color-0);
+  }
+  .app-wizard .wrapper .sidebar ul li:hover:not(.selected),
+  .app-wizard .action-bar .content button:hover,
+  .app-wizard .action-bar .content button:focus,{
+    background: var(--app-theme-color-6) !important;
+  }
+
+  .app-waiting .dialog-container {
+    border-color: var(--app-theme-color-17) !important;
+  }
+
+  .context-menu {
+    .context-menu-item {
+      &:hover {
+        color: var(--app-theme-color-0) !important;
+      }
+    }
+  }
+}
