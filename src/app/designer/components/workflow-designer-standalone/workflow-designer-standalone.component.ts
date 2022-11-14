@@ -29,7 +29,7 @@ export class WorkflowDesignerStandaloneComponent implements OnInit {
 
   constructor(
     private readonly modalService: ModalService,
-    readonly layoutService: LayoutService
+    readonly layoutService: LayoutService,
   ) { }
 
   ngOnInit(): void {
@@ -78,9 +78,7 @@ export class WorkflowDesignerStandaloneComponent implements OnInit {
     this.setFakeData();
   }
 
-  private setFakeData() {
-
-  }
+  setFakeData() {}
 
   openTab(tabId: string) {
     let found = this.tabs.find(t => t.id === tabId);
@@ -335,6 +333,7 @@ export class WorkflowDesignerStandaloneComponent implements OnInit {
       this.switchTab(this.tabs[0]);
     }
   }
+
   switchTab(tab: CommandViewModel, $event?: MouseEvent) {
     if ($event) {
       this.cancelEvent($event);

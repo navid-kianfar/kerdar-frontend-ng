@@ -6,13 +6,12 @@ import {WaitingComponent} from './components/waiting/waiting.component';
 import {FilterByPipe} from './pipes/filter-by.pipe';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {ConfirmModalComponent} from './modals/confirm-modal/confirm-modal.component';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatRadioModule} from '@angular/material/radio';
 import {AppInitializerFactory, AppInitializerProvider} from './services/app.initializer';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HttpInterceptor} from './services/http.interceptor';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { RadioButtonComponent } from './components/radio-button/radio-button.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,7 @@ import { RadioButtonComponent } from './components/radio-button/radio-button.com
     FilterByPipe,
     ConfirmModalComponent,
     CheckboxComponent,
-    RadioButtonComponent
+    RadioButtonComponent,
   ],
   exports: [
     WizardComponent,
@@ -32,6 +31,7 @@ import { RadioButtonComponent } from './components/radio-button/radio-button.com
     HttpClientModule,
     CommonModule,
     FormsModule,
+    MatSnackBarModule ,
     MatProgressBarModule
   ],
   providers: [

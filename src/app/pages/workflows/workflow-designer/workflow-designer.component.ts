@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {WaitingLoaderInfo} from '../../../core/types/shared-dtos';
+import {PlateService} from '../../../designer/services/plate.service';
 
 @Component({
   selector: 'app-workflow-designer',
@@ -8,9 +9,9 @@ import {WaitingLoaderInfo} from '../../../core/types/shared-dtos';
 })
 export class WorkflowDesignerComponent implements OnInit {
   waiting: boolean = false;
-  waitingLoaderInfo: WaitingLoaderInfo = { title: '', current: '' };
+  waitingLoaderInfo: WaitingLoaderInfo = {title: '', current: ''};
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.waiting = true;
@@ -23,4 +24,5 @@ export class WorkflowDesignerComponent implements OnInit {
     };
     setTimeout(() => this.waiting = false, 1000);
   }
+
 }

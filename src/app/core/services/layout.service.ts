@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {environment} from '../../../environments/environment';
 
 const ThemeManager = (window as any).ThemeManager;
 
@@ -7,7 +8,11 @@ const ThemeManager = (window as any).ThemeManager;
 })
 export class LayoutService {
   manager: any = ThemeManager;
-  constructor() { }
+  lang: string = environment.lang;
+  constructor() {
+    // culture = localStorage.getItem(this.layoutService.LANG_STORAGE_KEY) || culture;
+    // localStorage.setItem(this.layoutService.LANG_STORAGE_KEY, culture);
+  }
 
   toggle() {
     this.manager.toggle();
