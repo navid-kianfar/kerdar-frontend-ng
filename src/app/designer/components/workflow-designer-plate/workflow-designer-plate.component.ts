@@ -1,5 +1,7 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
 import {PlateService} from '../../services/plate.service';
+import {LayoutService} from '../../../core/services/layout.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-workflow-designer-plate',
@@ -7,29 +9,45 @@ import {PlateService} from '../../services/plate.service';
   styleUrls: ['./workflow-designer-plate.component.scss']
 })
 export class WorkflowDesignerPlateComponent implements OnInit {
+  themeSubscription?: Subscription;
 
   constructor(
     private readonly plateService: PlateService,
-    private readonly elementRef: ElementRef
+    private readonly elementRef: ElementRef,
+    private readonly layoutService: LayoutService,
   ) { }
 
   ngOnInit(): void {
     setTimeout(() => {
-      this.setFakeData();
       this.preparePlate();
+      this.setFakeData();
     }, 200);
   }
 
+  preparePlate() {
+    if (this.themeSubscription) {
+      this.themeSubscription.unsubscribe();
+      this.themeSubscription = undefined;
+    }
+    this.themeSubscription = this.layoutService.themeChanged.subscribe((theme) => {
+      const color = (theme === 'dark' ? 'dark' : 'modern');
+      this.setTheme(color);
+    });
+  }
+
+  setTheme(theme: string = '') {
+    theme = theme || (this.layoutService.manager.isDark() ? 'dark' : 'modern');
+    this.plateService.jointObject.setTheme(theme);
+    console.log('change: ', theme);
+  }
 
   setFakeData() {
-
     const {dia, shapes, linkTools, connectors} = this.plateService.jointObject;
     const {Polygon, Ellipse, Rect, toDeg} = this.plateService.gObject;
     const {TangentDirections} = connectors.curve;
 
     const paperElement = this.elementRef.nativeElement.querySelector('.paper');
     const bound = paperElement.getBoundingClientRect();
-    console.log(bound);
 
     const graph = new dia.Graph({}, {cellNamespace: shapes});
     const paper = new dia.Paper({
@@ -89,7 +107,6 @@ export class WorkflowDesignerPlateComponent implements OnInit {
         this.plateService.removeTools(view);
       }
     });
-
     graph.on({
       'add': (cell: any) => {
         this.plateService.addTools(cell.findView(paper));
@@ -186,10 +203,6 @@ export class WorkflowDesignerPlateComponent implements OnInit {
 //     // link2,
 //     // link3
 // ]);
-  }
-
-  preparePlate() {
-
   }
 
 }

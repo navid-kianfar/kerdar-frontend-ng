@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {LayoutService} from '../../core/services/layout.service';
 
 
 // Theme
@@ -63,15 +64,21 @@ export class PlateService {
     labelAttributes, bodyAttributes, ShapeTypes
   };
 
-  constructor() {
+  constructor(private readonly layoutService: LayoutService) {
     this.defineGlobalVariables();
+    this.setTheme();
     this.defineShapes();
   }
 
   defineGlobalVariables() {
     this.jointObject = (window as any).joint;
     this.gObject = (window as any).g;
-    //this.jointObject.setTheme('dark');
+  }
+
+  setTheme() {
+    const color = (this.layoutService.manager.theme === 'dark' ? 'dark' : 'modern');
+    this.jointObject.setTheme(color);
+    console.log('initial: ', color)
   }
 
   defineShapes() {
