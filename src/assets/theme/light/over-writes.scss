@@ -19,4 +19,8 @@ html[data-theme="light"] {
       }
     }
   }
+  .workflow-designer-standalone .tabs-header ul li.selected {
+    background: var(--app-secondary-color-shade-2) !important;
+    color: var(--app-theme-color-15) !important;
+  }
 }
