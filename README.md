@@ -6,7 +6,10 @@ for the ui/ux part i tried to get the idea from intellij platform since they are
 
 here are some screenshots
 
-![](/Users/navidkianfar/Desktop/DEV/untitled folder/kerdar/kerdar-frontend/screenshots/01.png)
-![](/Users/navidkianfar/Desktop/DEV/untitled folder/kerdar/kerdar-frontend/screenshots/02.png)
-![](/Users/navidkianfar/Desktop/DEV/untitled folder/kerdar/kerdar-frontend/screenshots/03.png)
-![](/Users/navidkianfar/Desktop/DEV/untitled folder/kerdar/kerdar-frontend/screenshots/05.png)
+![](./screenshots/01.png)
+
+![](./screenshots/02.png)
+
+![](./screenshots/03.png)
+
+![](./screenshots/05.png)
